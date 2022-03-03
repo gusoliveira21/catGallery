@@ -13,7 +13,6 @@ import jp.wasabeef.glide.transformations.CropSquareTransformation
 
 class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(DiffCallBack()) {
     var catUriList: MutableList<String> = mutableListOf()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val bindingRecyclerView = ItemImgRecyclerBinding.inflate(
             LayoutInflater.from(parent.context), parent, false)
@@ -21,13 +20,14 @@ class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(D
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.putImagem(catUriList!![position])
+        holder.putImagem(catUriList[position])
+
     }
 
     override fun getItemCount() = catUriList.size
 
     class ViewHolder(itemView: ItemImgRecyclerBinding) : RecyclerView.ViewHolder(itemView.root) {
-        val viewImagem = itemView.imageCat
+        private val viewImagem = itemView.imageCat
 
         fun putImagem(link: String) {
             Glide
@@ -41,10 +41,8 @@ class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(D
 }
 
 class DiffCallBack : DiffUtil.ItemCallback<Image>() {
-    override fun areItemsTheSame(oldItem: Image, newItem: Image)
-            = oldItem.id == newItem.id
-    override fun areContentsTheSame(oldItem: Image, newItem: Image)
-            = oldItem == newItem
+    override fun areItemsTheSame(oldItem: Image, newItem: Image) = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: Image, newItem: Image) = oldItem == newItem
 }
 
 

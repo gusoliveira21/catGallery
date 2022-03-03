@@ -31,22 +31,22 @@ class MainViewModel : ViewModel() {
                 } catch (e: Exception) {
                     Log.e("Erro coroutine", "-> $e")
                 }
-
             }
         }
     }
 
     private fun getListImg(listData: CatDataClass) {
-        var listUriCat: MutableList<String> = mutableListOf()
+        val listUriCat: MutableList<String> = mutableListOf()
         listData.data.forEach { dataList ->
             if (dataList.images != null) {
                 dataList.images.forEach { imageList ->
                     if (imageList.type != "video/mp4" || imageList.type != "image/gif") {
-                        listUriCat?.add(imageList.link)
+                        listUriCat.add(imageList.link)
                     }
                 }
             }
         }
         _catUriList.value = listUriCat
     }
+
 }
