@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.gusoliveira21.catgallery.databinding.MainFragmentBinding
@@ -20,19 +18,20 @@ class MainFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?,
     ): View {
-
-        return binding.root}
+        return binding.root
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if(statusInternet(requireContext())) {
-            viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+            viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
             binding.lifecycleOwner = viewLifecycleOwner
-            viewModel.catUriList.observe(viewLifecycleOwner, Observer {
+            viewModel.catUriList.observe(viewLifecycleOwner, {
                 adapter(it)
             })
-        }else{
-            Toast.makeText(requireContext(),"Sem conexão com a internet!", Toast.LENGTH_LONG).show()
+        }else {
+            binding.textAviso.visibility = View.VISIBLE
         }
     }
 
@@ -41,7 +40,7 @@ class MainFragment : Fragment() {
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 4)
         binding.recyclerView.adapter = adapter
     }
-
+//TODO: Exibir imagem selecionada em tela grande
+//TODO: Caso nao tenha internet, exibir mensagem, esperar 3 segundos e fechar o app
+//TODO: Durante a contagem dos tres segundos, o valor deve ser exibido na tela
 }
-//TODO:Verificar autorização
-//TODO:Verificar internet

@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.model
+package br.com.gusoliveira21.catgallery.model.modelResultRetrofit
 
 data class AdConfig(
     val highRiskFlags: List<Any>,
