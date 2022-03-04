@@ -2,9 +2,7 @@ package br.com.gusoliveira21.catgallery.api
 
 
 
-import br.com.gusoliveira21.catgallery.model.CatDataClass
-import br.com.gusoliveira21.catgallery.model.Data
-import retrofit2.Call
+import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
 import retrofit2.http.GET
 import retrofit2.http.Headers
 

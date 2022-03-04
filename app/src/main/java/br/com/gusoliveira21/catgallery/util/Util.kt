@@ -8,7 +8,6 @@ object Util {
     fun statusInternet(context: Context): Boolean {
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
-        //val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
         return activeNetwork?.isConnectedOrConnecting == true
     }
 }

@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.gusoliveira21.catgallery.databinding.ItemImgRecyclerBinding
-import br.com.gusoliveira21.catgallery.model.Image
+import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.Image
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import jp.wasabeef.glide.transformations.CropSquareTransformation
-
+//TODO: Adicionar exibição da imagem em tela grande
+//TODO: Salvar imagens recuperadas no Room e realizar o consumo do Adapter a partir dele
 class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(DiffCallBack()) {
     var catUriList: MutableList<String> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,7 +22,6 @@ class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(D
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.putImagem(catUriList[position])
-
     }
 
     override fun getItemCount() = catUriList.size

@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.gusoliveira21.catgallery.api.RetrofitInicializer
-import br.com.gusoliveira21.catgallery.model.CatDataClass
+import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
@@ -48,5 +48,6 @@ class MainViewModel : ViewModel() {
         }
         _catUriList.value = listUriCat
     }
+
 
 }
