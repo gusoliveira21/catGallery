@@ -29,4 +29,4 @@
 Após isso, meu empecilho foi fazer o retorno dos meus dados não travarem o aplicativo devido a demora na resposta, para isso, precisei aprender a utilizar Coroutines para fazer minha chamada a api e seleção dos endereços das imagens em segundo plano.
 <p/>
 <p>
-Por fim, estava tendo trabalho com obtenção das imagens por meio do URL, tentei converter em Bitmap e enviar para a view, mas nunca funcionada, logo, recorri a boa e velha pesquisa e encontrei a API Glide, ferramenta que me ajudou muito na finalização do trabalho.<p/>
+Por fim, estava tendo trabalho com obtenção das imagens por meio do URL, tentei converter em Bitmap e enviar para a view, mas nunca funcionada, logo, recorri ao google e encontrei a API Glide, ferramenta que me ajudou muito na finalização do trabalho.<p/>
