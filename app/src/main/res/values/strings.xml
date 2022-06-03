@@ -4,4 +4,6 @@
     <string name="logo_do_app">Logo do app</string>
     <string name="sem_sinal_de_internet">Sem sinal de internet!</string>
     <string name="aviso_de_app_n_o_detectando_internet">Aviso de app não detectando internet</string>
+    <string name="button_search">botão pesquisa</string>
+    <string name="drawer_start">menu em gaveta</string>
 </resources>

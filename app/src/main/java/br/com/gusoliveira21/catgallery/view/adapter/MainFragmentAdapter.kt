@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import br.com.gusoliveira21.catgallery.databinding.ItemImgRecyclerBinding
+import br.com.gusoliveira21.catgallery.databinding.ItemImgBinding
 import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.Image
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -15,7 +15,7 @@ import jp.wasabeef.glide.transformations.CropSquareTransformation
 class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(DiffCallBack()) {
     var catUriList: MutableList<String> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val bindingRecyclerView = ItemImgRecyclerBinding.inflate(
+        val bindingRecyclerView = ItemImgBinding.inflate(
             LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(bindingRecyclerView)
     }
@@ -26,7 +26,7 @@ class MainFragmentAdapter : ListAdapter<Image, MainFragmentAdapter.ViewHolder>(D
 
     override fun getItemCount() = catUriList.size
 
-    class ViewHolder(itemView: ItemImgRecyclerBinding) : RecyclerView.ViewHolder(itemView.root) {
+    class ViewHolder(itemView: ItemImgBinding) : RecyclerView.ViewHolder(itemView.root) {
         private val viewImagem = itemView.imageCat
 
         fun putImagem(link: String) {

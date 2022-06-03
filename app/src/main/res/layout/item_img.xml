@@ -9,9 +9,9 @@
             type="br.com.gusoliveira21.catgallery.view.ui.MainViewModel" />
     </data>
 
+    <!--android:shadowColor="@color/black"-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:shadowColor="@color/purple_200"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
         android:padding="1dp">
