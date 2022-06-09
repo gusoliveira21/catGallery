@@ -1,25 +1,19 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
-import junit.framework.TestCase
-import org.junit.Test
+//import androidx.navigation.Navigator
+//import br.com.gusoliveira21.catgallery.data.Repository
+//import io.mockk.mockk
 
-class MainViewModelTest : TestCase() {
-
-    public override fun setUp() {
-        super.setUp()
-    }
-
-    public override fun tearDown() {}
-
-    @Test
-    fun testGetListRetrofit(){
-    }
-
-    fun testGetCatUriList() {}
-
-    fun testGetListImgCat() {}
-
-    fun testSetListImgCat() {}
-
-    fun testGetListImg() {}
+class MainViewModelTest{
+    /*val repository = //mock<Repository>()
+    private fun instantiateViewModel(): ViewModel {
+        return MainViewModel()
+    }*/
 }
+
+
+
+
+
+
+

@@ -4,14 +4,12 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import br.com.gusoliveira21.catgallery.api.RetrofitInicializer
+import androidx.lifecycle.ViewModelProvider
+import br.com.gusoliveira21.catgallery.data.Repository
+import br.com.gusoliveira21.catgallery.data.RepositoryImpl
 import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(private val repository: Repository) : ViewModel() {
 
     private var _catUriList = MutableLiveData<MutableList<String>>()
     val catUriList: LiveData<MutableList<String>>
@@ -22,17 +20,12 @@ class MainViewModel : ViewModel() {
     }
 
     private fun getListRetrofit() {
-        viewModelScope.launch {
-            coroutineScope {
                 try {
-                    val listData = async { RetrofitInicializer().getRetrofitService().catList() }
-                    getListImg(listData.await())
-
+                    val listData =  repository.getData()
+                    getListImg(listData)
                 } catch (e: Exception) {
-                    Log.e("Erro coroutine", "-> $e")
+                    Log.e("Erro getListRetrofit()", "-> $e")
                 }
-            }
-        }
     }
 
     private fun getListImg(listData: CatDataClass) {
@@ -47,6 +40,14 @@ class MainViewModel : ViewModel() {
             }
         }
         _catUriList.value = listUriCat
+    }
+
+    //TODO: Relembrar para que serve exatamente.
+    @Suppress("UNCHECKED_CAST")
+    class Factory: ViewModelProvider.Factory{
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return MainViewModel(RepositoryImpl()) as T
+        }
     }
 
 
