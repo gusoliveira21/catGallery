@@ -38,3 +38,17 @@ data class Data(
     val views: Int?,
     val vote: String?
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+

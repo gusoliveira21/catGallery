@@ -19,13 +19,14 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
         getListRetrofit()
     }
 
-    private fun getListRetrofit() {
-                try {
-                    val listData =  repository.getData()
-                    getListImg(listData)
-                } catch (e: Exception) {
-                    Log.e("Erro getListRetrofit()", "-> $e")
-                }
+    fun getListRetrofit() {
+        try {
+            val listData =  repository.getData()
+            Log.e("teste","${listData}")
+            /*getListImg(listData)*/
+        } catch (e: Exception) {
+            Log.e("Erro getListRetrofit()", "-> $e")
+        }
     }
 
     private fun getListImg(listData: CatDataClass) {

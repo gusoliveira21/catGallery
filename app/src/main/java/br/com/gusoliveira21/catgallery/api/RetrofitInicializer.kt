@@ -9,6 +9,7 @@ class RetrofitInicializer {
         private const val BASE_URL = "https://api.imgur.com/"
     }
 
+
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
