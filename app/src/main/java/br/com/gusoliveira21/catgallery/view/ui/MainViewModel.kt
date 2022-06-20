@@ -5,11 +5,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import br.com.gusoliveira21.catgallery.data.Repository
-import br.com.gusoliveira21.catgallery.data.RepositoryImpl
+import androidx.lifecycle.viewModelScope
+import br.com.gusoliveira21.catgallery.api.RetrofitInicializer
+import br.com.gusoliveira21.catgallery.data.repository.CatRepository
+import br.com.gusoliveira21.catgallery.data.repository.CatRepositoryImpl
 import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
+import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: Repository) : ViewModel() {
+class MainViewModel(private val catRepository: CatRepository) : ViewModel() {
 
     private var _catUriList = MutableLiveData<MutableList<String>>()
     val catUriList: LiveData<MutableList<String>>
@@ -21,9 +24,11 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
 
     fun getListRetrofit() {
         try {
-            val listData =  repository.getData()
-            Log.e("teste","${listData}")
-            /*getListImg(listData)*/
+            viewModelScope.launch {
+                val listData =  catRepository.getData()
+                Log.e("teste","${listData}")
+                getListImg(listData)
+            }
         } catch (e: Exception) {
             Log.e("Erro getListRetrofit()", "-> $e")
         }
@@ -47,7 +52,9 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     @Suppress("UNCHECKED_CAST")
     class Factory: ViewModelProvider.Factory{
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return MainViewModel(RepositoryImpl()) as T
+            val catService = RetrofitInicializer().getRetrofitService()
+            val catRepository = CatRepositoryImpl(catService)
+            return MainViewModel(catRepository) as T
         }
     }
 
