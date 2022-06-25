@@ -1,16 +1,17 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import br.com.gusoliveira21.catgallery.api.RetrofitInicializer
 import br.com.gusoliveira21.catgallery.data.repository.CatRepository
 import br.com.gusoliveira21.catgallery.data.repository.CatRepositoryImpl
 import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
 import kotlinx.coroutines.launch
+import org.koin.dsl.module
+
+val viewModelModule = module {
+    factory { MainViewModel(get()) }
+}
 
 class MainViewModel(private val catRepository: CatRepository) : ViewModel() {
 
@@ -25,8 +26,8 @@ class MainViewModel(private val catRepository: CatRepository) : ViewModel() {
     fun getListRetrofit() {
         try {
             viewModelScope.launch {
-                val listData =  catRepository.getData()
-                Log.e("teste","${listData}")
+                val listData = catRepository.getData()
+                Log.e("teste", "${listData}")
                 getListImg(listData)
             }
         } catch (e: Exception) {
@@ -50,7 +51,7 @@ class MainViewModel(private val catRepository: CatRepository) : ViewModel() {
 
     //TODO: Relembrar para que serve exatamente.
     @Suppress("UNCHECKED_CAST")
-    class Factory: ViewModelProvider.Factory{
+    class Factory : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             val catService = RetrofitInicializer().getRetrofitService()
             val catRepository = CatRepositoryImpl(catService)
