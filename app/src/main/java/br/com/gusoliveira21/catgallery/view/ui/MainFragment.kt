@@ -23,7 +23,6 @@ class MainFragment : Fragment() {
     private val viewModel: MainViewModel by viewModel()
 
     private val binding by lazy { MainFragmentBinding.inflate(LayoutInflater.from(requireContext())) }
-    private val factory = MainViewModel.Factory()
     private var adapter = MainFragmentAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?,
