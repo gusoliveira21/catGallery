@@ -1,39 +1,48 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.Observer
-import br.com.gusoliveira21.catgallery.data.MockData
-import br.com.gusoliveira21.catgallery.data.Repository
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
-import io.mockk.every
+import assertk.assertThat
+import assertk.assertions.isEqualTo
+import br.com.gusoliveira21.catgallery.data.repository.CatRepository
+import br.com.gusoliveira21.catgallery.extension.getOrAwaitValue
+import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.mockk
-import io.mockk.verify
 import org.junit.Rule
 import org.junit.Test
 
 //@RunWith é necessário apenas se você usar uma combinação de JUnit3 e JUnit4.
 class MainViewModelUnitTest{
+
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
-    private val repository = mockk<Repository>()
-    private val onDataLoadedObserver = mockk<Observer<List<CatDataClass>>>(relaxed = true)
+    private val repository = mockk<CatRepository>(relaxed = true)
+
     @Test
     fun `quando a ViewModel busca os dados ela deve chamar o repositorio`() {
-        val viewModel = instantiateViewModel()
-        val mockedData = MockData().getMockData()
-        //Toda chamada para repository.getData() vai retornar mockedData
-        every { repository.getData() } returns mockedData
+        // arrange
+        coEvery { repository.getData() } returns catDataMocked
+        val viewModel = MainViewModel(repository)
+
+        // act
         viewModel.getListRetrofit()
-        //Verifica se a função getData() foi chamada
-        verify { repository.getData() }
-        //Verifica se o observer foi acionado
-        //verify { onDataLoadedObserver.onChanged(listOf(mockedData)) }
+
+        // assert
+        coVerify { repository.getData() }
     }
 
-    private fun instantiateViewModel(): MainViewModel {
+    @Test
+    fun `dado que o viewModel foi iniciado quando eu chamar o metodo para obter os dados entao a lista de gatos e retornada com sucesso`() {
+        // arrange
+        coEvery { repository.getData() } returns catDataMocked
         val viewModel = MainViewModel(repository)
-        viewModel.catUriList.observeForever(Observer{onDataLoadedObserver})
-        return viewModel
+
+        // act
+        viewModel.getListRetrofit()
+
+        // assert
+        val value = viewModel.catUriList.getOrAwaitValue()
+        assertThat(value).isEqualTo(catDataExpected)
     }
 }

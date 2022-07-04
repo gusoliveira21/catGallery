@@ -66,6 +66,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation "io.mockk:mockk:1.12.4"
     testImplementation "org.mockito:mockito-core:1.9.5"
+
+    testImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.25'
     //androidTestImplementation "io.mockk:mockk-android:$version" //Para instrumentalTest
 
     //testImplementation "io.mockk:mockk-agent-jvm:$version"

@@ -17,7 +17,7 @@ val mainModule = module {
         CatRepositoryImpl(get())
     }
 
-    viewModel {
+    viewModel { (catName: String) ->
         MainViewModel(get())
     }
 }
