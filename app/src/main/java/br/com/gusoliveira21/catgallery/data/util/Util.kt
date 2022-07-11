@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.util
+package br.com.gusoliveira21.catgallery.data.util
 
 import android.content.Context
 import android.net.ConnectivityManager

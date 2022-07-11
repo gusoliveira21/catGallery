@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.gusoliveira21.catgallery.databinding.ItemImgRecyclerBinding
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.Image
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Image
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import jp.wasabeef.glide.transformations.CropSquareTransformation

@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.model.modelResultRetrofit
+package br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit
 
 data class Data(
     val account_id: Int?,
@@ -16,7 +16,7 @@ data class Data(
     val favorite: Boolean?,
     val favorite_count: Int?,
     val id: String?,
-    val images: List<Image>,
+    val images: List<Image>?,
     val images_count: Int?,
     val in_gallery: Boolean?,
     val in_most_viral: Boolean?,

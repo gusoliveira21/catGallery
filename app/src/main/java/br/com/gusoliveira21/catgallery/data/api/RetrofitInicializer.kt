@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.api
+package br.com.gusoliveira21.catgallery.data.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

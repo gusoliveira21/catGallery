@@ -1,11 +1,11 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.AdConfig
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.CatDataClass
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.Data
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.DescriptionAnnotations
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.Image
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.Tag
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.AdConfig
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.CatDataClass
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Data
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.DescriptionAnnotations
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Image
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Tag
 
 val catDataMocked = CatDataClass(
     data = listOf(
@@ -110,7 +110,7 @@ val catDataMocked = CatDataClass(
                             accent = "B85E44",
                             background_hash = "5uFU9FR",
                             background_is_animated = false,
-                            description = "description_annotations=br.com.gusoliveira21.catgallery.model.modelResultRetrofit.DescriptionAnnotations@204460b",
+                            description = "description_annotations=br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.DescriptionAnnotations@204460b",
                             display_name = "fundraising",
                             followers = 35,
                             following = false,

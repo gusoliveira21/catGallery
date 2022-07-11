@@ -1,7 +1,7 @@
 package br.com.gusoliveira21.catgallery.data
 
-import br.com.gusoliveira21.catgallery.api.RetrofitInicializer
-import br.com.gusoliveira21.catgallery.model.modelResultRetrofit.*
+import br.com.gusoliveira21.catgallery.data.api.RetrofitInicializer
+import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking

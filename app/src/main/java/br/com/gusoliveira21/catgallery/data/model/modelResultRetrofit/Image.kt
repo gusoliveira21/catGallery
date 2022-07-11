@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.model.modelResultRetrofit
+package br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit
 
 data class Image(
     val account_id: Int?,
