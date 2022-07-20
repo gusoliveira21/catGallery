@@ -13,9 +13,7 @@ abstract class BaseUseCase<in Params, out R> {
 
     protected abstract suspend fun doWork(params: Params): R
 
-    suspend fun execute(
-        params: Params
-    ): DataResult<R> {
+    suspend fun execute(params: Params): DataResult<R> {
         return withContext(scope.coroutineContext) {
             try {
                 val result = withContext(Dispatchers.IO) { doWork(params) }

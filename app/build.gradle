@@ -45,10 +45,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-    //"Method ... not mocked."
-    testOptions {
-        unitTests.returnDefaultValues = true
-    }
 }
 
 dependencies {
@@ -61,6 +57,12 @@ dependencies {
 
     //App's dependencies, including test
     implementation 'com.android.support:support-annotations:22.2.0'
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+    //test - runBlockingTest
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
 
     /*Testing libraries*/
     testImplementation 'junit:junit:4.13.2'

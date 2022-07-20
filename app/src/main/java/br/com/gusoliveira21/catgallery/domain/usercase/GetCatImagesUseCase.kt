@@ -17,7 +17,6 @@ class GetCatImagesUseCase(private val catRepository: CatRepository): BaseUseCase
                 }
             }
         }
-
         return catList
     }
 
