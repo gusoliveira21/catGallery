@@ -1,3 +1,0 @@
-package br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit
-
-class DescriptionAnnotations

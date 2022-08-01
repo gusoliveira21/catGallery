@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.gusoliveira21.catgallery.databinding.MainFragmentBinding
-import br.com.gusoliveira21.catgallery.data.util.Util.statusInternet
+import br.com.data.util.Util.statusInternet
 import br.com.gusoliveira21.catgallery.view.adapter.MainFragmentAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.dsl.module

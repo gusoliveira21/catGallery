@@ -1,19 +1,19 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
-import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.AdConfig
-import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.CatDataClass
-import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Data
-import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.DescriptionAnnotations
-import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Image
-import br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.Tag
+import br.com.data.modelResultRetrofit.AdConfig
+import br.com.data.modelResultRetrofit.CatDataClass
+import br.com.data.modelResultRetrofit.Data
+import br.com.data.modelResultRetrofit.DescriptionAnnotations
+import br.com.data.modelResultRetrofit.Image
+import br.com.data.modelResultRetrofit.Tag
 
-val catDataMocked = CatDataClass(
+val catDataMocked = br.com.data.modelResultRetrofit.CatDataClass(
     data = listOf(
-        Data(
+        br.com.data.modelResultRetrofit.Data(
             account_id = 12309091,
             account_url = null,
             ad_config =
-            AdConfig(
+            br.com.data.modelResultRetrofit.AdConfig(
                 highRiskFlags = listOf(""),
                 safeFlags = listOf(""),
                 showsAds = true,
@@ -47,12 +47,12 @@ val catDataMocked = CatDataClass(
             score = 5,
             section = "",
             tags = listOf(
-                Tag(
+                br.com.data.modelResultRetrofit.Tag(
                     accent = "B85E44",
                     background_hash = "5uFU9FR",
                     background_is_animated = false,
                     description = "",
-                    description_annotations = DescriptionAnnotations(),
+                    description_annotations = br.com.data.modelResultRetrofit.DescriptionAnnotations(),
                     display_name = "fundraising",
                     followers = 35,
                     following = false,
@@ -73,7 +73,7 @@ val catDataMocked = CatDataClass(
             views = 11,
             vote = null,
             images = listOf(
-                Image(
+                br.com.data.modelResultRetrofit.Image(
                     account_id = null,
                     account_url = null,
                     ad_type = 1,
@@ -106,11 +106,11 @@ val catDataMocked = CatDataClass(
                     vote = null,
                     width = 720,
                     tags = listOf(
-                        Tag(
+                        br.com.data.modelResultRetrofit.Tag(
                             accent = "B85E44",
                             background_hash = "5uFU9FR",
                             background_is_animated = false,
-                            description = "description_annotations=br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.DescriptionAnnotations@204460b",
+                            description = "description_annotations=br.com.data.DescriptionAnnotations@204460b",
                             display_name = "fundraising",
                             followers = 35,
                             following = false,
@@ -122,7 +122,7 @@ val catDataMocked = CatDataClass(
                             thumbnail_hash = false,
                             thumbnail_is_animated = false,
                             total_items = 354,
-                            description_annotations = DescriptionAnnotations()
+                            description_annotations = br.com.data.modelResultRetrofit.DescriptionAnnotations()
                         )
                     )
                 )

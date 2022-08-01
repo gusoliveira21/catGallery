@@ -4,22 +4,13 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import br.com.gusoliveira21.catgallery.MainCoroutineRule
-import br.com.gusoliveira21.catgallery.data.repository.CatRepository
 import br.com.gusoliveira21.catgallery.domain.usercase.GetCatImagesUseCase
 import br.com.gusoliveira21.catgallery.extension.getOrAwaitValue
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.TestCoroutineScope
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TestWatcher
-import org.junit.runner.Description
 
 //@RunWith é necessário apenas se você usar uma combinação de JUnit3 e JUnit4.
 class MainViewModelUnitTest{

@@ -1,12 +1,11 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.gusoliveira21.catgallery.domain.entities.CatEntity
-import br.com.gusoliveira21.catgallery.domain.usercase.GetCatImagesUseCase
+import br.com.domain.entities.CatEntity
+import br.com.domain.usercase.GetCatImagesUseCase
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val getCatImagesUseCase: GetCatImagesUseCase) : ViewModel() {

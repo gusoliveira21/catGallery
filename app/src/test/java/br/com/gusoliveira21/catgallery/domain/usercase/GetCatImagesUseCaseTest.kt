@@ -3,7 +3,6 @@ package br.com.gusoliveira21.catgallery.domain.usercase
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import br.com.gusoliveira21.catgallery.MainCoroutineRule
-import br.com.gusoliveira21.catgallery.data.repository.CatRepository
 import br.com.gusoliveira21.catgallery.view.ui.catDataMocked
 import io.mockk.coEvery
 import io.mockk.mockk
