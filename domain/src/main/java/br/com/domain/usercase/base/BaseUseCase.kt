@@ -25,5 +25,4 @@ abstract class BaseUseCase<in Params, out R> {
     }
 
     fun cancelWork() = scope.coroutineContext.cancelChildren()
-
 }

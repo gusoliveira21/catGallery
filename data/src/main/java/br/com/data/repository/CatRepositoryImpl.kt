@@ -16,7 +16,6 @@ class CatRepositoryImpl(private val catService: CatService): CatRepository {
                ))
            }
         }
-
         return list
     }
 }

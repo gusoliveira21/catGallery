@@ -1,19 +1,15 @@
-package br.com.gusoliveira21.catgallery.view.ui
+package br.com.gusoliveira21.catgallery
 
-import br.com.data.modelResultRetrofit.AdConfig
-import br.com.data.modelResultRetrofit.CatDataClass
-import br.com.data.modelResultRetrofit.Data
-import br.com.data.modelResultRetrofit.DescriptionAnnotations
-import br.com.data.modelResultRetrofit.Image
-import br.com.data.modelResultRetrofit.Tag
+import br.com.data.modelResultRetrofit.*
+import br.com.domain.entities.CatEntity
 
-val catDataMocked = br.com.data.modelResultRetrofit.CatDataClass(
+/*val catDataMocked = CatDataClass(
     data = listOf(
-        br.com.data.modelResultRetrofit.Data(
+        Data(
             account_id = 12309091,
             account_url = null,
             ad_config =
-            br.com.data.modelResultRetrofit.AdConfig(
+            AdConfig(
                 highRiskFlags = listOf(""),
                 safeFlags = listOf(""),
                 showsAds = true,
@@ -47,12 +43,12 @@ val catDataMocked = br.com.data.modelResultRetrofit.CatDataClass(
             score = 5,
             section = "",
             tags = listOf(
-                br.com.data.modelResultRetrofit.Tag(
+                Tag(
                     accent = "B85E44",
                     background_hash = "5uFU9FR",
                     background_is_animated = false,
                     description = "",
-                    description_annotations = br.com.data.modelResultRetrofit.DescriptionAnnotations(),
+                    description_annotations = DescriptionAnnotations(),
                     display_name = "fundraising",
                     followers = 35,
                     following = false,
@@ -73,7 +69,7 @@ val catDataMocked = br.com.data.modelResultRetrofit.CatDataClass(
             views = 11,
             vote = null,
             images = listOf(
-                br.com.data.modelResultRetrofit.Image(
+                Image(
                     account_id = null,
                     account_url = null,
                     ad_type = 1,
@@ -106,11 +102,11 @@ val catDataMocked = br.com.data.modelResultRetrofit.CatDataClass(
                     vote = null,
                     width = 720,
                     tags = listOf(
-                        br.com.data.modelResultRetrofit.Tag(
+                        Tag(
                             accent = "B85E44",
                             background_hash = "5uFU9FR",
                             background_is_animated = false,
-                            description = "description_annotations=br.com.data.DescriptionAnnotations@204460b",
+                            description = "description_annotations=br.com.gusoliveira21.catgallery.data.model.modelResultRetrofit.DescriptionAnnotations@204460b",
                             display_name = "fundraising",
                             followers = 35,
                             following = false,
@@ -122,12 +118,19 @@ val catDataMocked = br.com.data.modelResultRetrofit.CatDataClass(
                             thumbnail_hash = false,
                             thumbnail_is_animated = false,
                             total_items = 354,
-                            description_annotations = br.com.data.modelResultRetrofit.DescriptionAnnotations()
+                            description_annotations = DescriptionAnnotations()
                         )
                     )
                 )
             )
         )
+    )
+)*/
+
+val catDataReality = listOf(
+    CatEntity(
+        "//i.imgur.com/8GkvlbT.jpg",
+        "jpg"
     )
 )
 
