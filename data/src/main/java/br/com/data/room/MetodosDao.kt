@@ -1,4 +1,4 @@
-package br.com.data
+package br.com.data.room
 
 import androidx.room.Dao
 import androidx.room.Insert
