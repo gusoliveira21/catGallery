@@ -30,7 +30,7 @@ class MainViewModelUnitTest {
     fun `quando a ViewModel busca os dados ela deve chamar o repositorio`() {
         // arrange
         coEvery { repository.getCats() } returns catDataReality
-        val viewModel = MainViewModel(GetCatImagesUseCase(repository))
+        val viewModel = MainViewModelImpl(GetCatImagesUseCase(repository))
 
         // act
         viewModel.getListRetrofit()
@@ -43,7 +43,7 @@ class MainViewModelUnitTest {
     fun `dado que o viewModel foi iniciado, quando eu chamar o metodo para obter os dados entao a lista de gatos e retornada com sucesso`() {
         // arrange
         coEvery { repository.getCats() } returns catDataReality
-        val viewModel = MainViewModel(GetCatImagesUseCase(repository))
+        val viewModel = MainViewModelImpl(GetCatImagesUseCase(repository))
 
         // act
         viewModel.getListRetrofit()

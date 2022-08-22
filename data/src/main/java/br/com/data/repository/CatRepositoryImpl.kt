@@ -1,21 +1,28 @@
 package br.com.data.repository
 
-import br.com.domain.entities.CatEntity
-import br.com.domain.repository.CatRepository
+import android.content.Context
 import br.com.data.api.CatService
+import br.com.data.util.Util
+import br.com.domain.entities.CatEntity
+import br.com.domain.exceptions.NoConnection
+import br.com.domain.repository.CatRepository
 
-class CatRepositoryImpl(private val catService: CatService): CatRepository {
+class CatRepositoryImpl(private val catService: CatService, private val context: Context): CatRepository {
     override suspend fun getCats(): List<CatEntity> {
-        val list: MutableList<CatEntity> = mutableListOf()
+        if (Util.statusInternet(context)) {
+            val list: MutableList<CatEntity> = mutableListOf()
 
-        catService.catList().data.forEach { data ->
-           data.images?.forEach { image ->
-               list.add(CatEntity(
-                   image = image.link,
-                   type = image.type
-               ))
-           }
+            catService.catList().data.forEach { data ->
+                data.images?.forEach { image ->
+                    list.add(CatEntity(
+                        image = image.link,
+                        type = image.type
+                    ))
+                }
+            }
+            return list
+        } else {
+           throw NoConnection()
         }
-        return list
     }
 }

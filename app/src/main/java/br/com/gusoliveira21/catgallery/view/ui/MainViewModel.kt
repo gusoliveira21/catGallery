@@ -1,35 +1,14 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import br.com.domain.entities.CatEntity
-import br.com.domain.usercase.GetCatImagesUseCase
-import kotlinx.coroutines.launch
 
-class MainViewModel(private val getCatImagesUseCase: GetCatImagesUseCase) : ViewModel() {
+abstract class MainViewModel : ViewModel() {
 
-    private var _catUriList = MutableLiveData<MutableList<String>>()
-    val catUriList: LiveData<MutableList<String>>
-        get() = _catUriList
+    abstract val catList: LiveData<MutableList<String>>
 
-    init {
-        getListRetrofit()
-    }
+    abstract val error: LiveData<String>
 
-    fun getListRetrofit() {
-        viewModelScope.launch {
-            val result = getCatImagesUseCase.execute(Unit)
-            result.handleResult(::getCatListSuccess, ::getCatListFailure)
-        }
-    }
+    abstract fun getCatList()
 
-    private fun getCatListSuccess(list: List<CatEntity>) {
-        _catUriList.value = list.map { it.image }.toMutableList()
-    }
-
-    private fun getCatListFailure() {
-        // Retornar algum erro para  tela
-    }
 }
