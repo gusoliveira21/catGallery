@@ -8,11 +8,11 @@ import br.com.domain.exceptions.NoConnection
 import br.com.domain.repository.CatRepository
 
 class CatRepositoryImpl(private val catService: CatService, private val context: Context): CatRepository {
-    override suspend fun getCats(): List<CatEntity> {
+    override suspend fun getCats(wordToSearch:String): List<CatEntity> {
         if (Util.statusInternet(context)) {
             val list: MutableList<CatEntity> = mutableListOf()
 
-            catService.catList().data.forEach { data ->
+            catService.catList(wordToSearch).data.forEach { data ->
                 data.images?.forEach { image ->
                     list.add(CatEntity(
                         image = image.link,

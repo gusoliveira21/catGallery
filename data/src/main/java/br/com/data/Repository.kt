@@ -6,11 +6,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-
+//TODO: "Essa interface serve para alguma coisa?"
 interface Repository {
     fun getData(): CatDataClass
 }
 
+/*
 class RepositoryImpl: Repository {
     override fun getData(): CatDataClass {
         var data =
@@ -21,4 +22,4 @@ class RepositoryImpl: Repository {
             }
         return data
     }
-}
+}*/

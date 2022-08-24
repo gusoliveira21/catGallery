@@ -9,6 +9,6 @@ abstract class MainViewModel : ViewModel() {
 
     abstract val error: LiveData<String>
 
-    abstract fun getCatList()
+    abstract fun getCatList(wordToSearch:String = "cat")
 
 }

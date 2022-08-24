@@ -1,5 +1,6 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.domain.entities.CatEntity
@@ -16,10 +17,12 @@ class MainViewModelImpl(private val getCatImagesUseCase: GetCatImagesUseCase) : 
         getCatList()
     }
 
-    override fun getCatList() {
-        viewModelScope.launch {
-            val result = getCatImagesUseCase.execute(Unit)
-            result.handleResult(::getCatListSuccess, ::getCatListFailure)
+    override fun getCatList(wordToSearch:String) {
+        if(wordToSearch.isNotBlank() || wordToSearch.isNotEmpty()) {
+            viewModelScope.launch {
+                val result = getCatImagesUseCase.execute(wordToSearch)
+                result.handleResult(::getCatListSuccess, ::getCatListFailure)
+            }
         }
     }
 

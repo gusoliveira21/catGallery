@@ -5,8 +5,8 @@ import br.com.domain.repository.CatRepository
 import br.com.domain.usercase.base.BaseUseCase
 
 class GetCatImagesUseCase(private val catRepository: CatRepository): BaseUseCase<Unit, List<CatEntity>>() {
-    override suspend fun doWork(params: Unit): List<CatEntity> {
-        val result = catRepository.getCats()
+    override suspend fun doWork(wordToSearch: String): List<CatEntity> {
+        val result = catRepository.getCats(wordToSearch)
         val catList: MutableList<CatEntity> = mutableListOf()
 
         result.forEach { image ->
