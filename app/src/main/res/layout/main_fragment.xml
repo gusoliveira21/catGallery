@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.MainFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -15,56 +15,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="0dp"
-            tools:layout_editor_absoluteX="16dp">
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:padding="0dp"-->
+<!--            tools:layout_editor_absoluteX="16dp">-->
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:contentDescription="@string/logo_do_app"
-                android:src="@drawable/logo_cat_gallery"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:contentDescription="@string/logo_do_app"-->
+<!--                android:src="@drawable/logo_cat_gallery"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/search_input"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Pesquisar"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/search_button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/search_input"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Pesquisar"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/search_button"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/search_field_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:maxLength="20" />
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/search_field_id"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:maxLength="20" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <ImageButton
-                android:id="@+id/search_button"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/ic_search"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/search_input"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/search_input"
-                tools:ignore="SpeakableTextPresentCheck" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/search_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:backgroundTint="#00FFFFFF"-->
+<!--                android:src="@drawable/ic_search"-->
+<!--                android:visibility="invisible"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/search_input"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/search_input"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-    </com.google.android.material.appbar.MaterialToolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -75,10 +75,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:listitem="@layout/item_img_recycler">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
+        tools:listitem="@layout/item_img_recycler" />
 
     <TextView
         android:id="@+id/text_aviso"
@@ -93,6 +90,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

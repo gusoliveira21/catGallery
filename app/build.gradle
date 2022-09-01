@@ -47,15 +47,24 @@ android {
     }
 }
 
+configurations {
+    androidTestImplementation {
+        exclude group: 'io.mockk', module: 'mockk-agent-jvm'
+    }
+}
+
 dependencies {
+    def koin_version = "3.2.0"
+    def mockk_version = "1.12.5"
+
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-
-    implementation(project(":domain"))
-    implementation(project(":data"))
 
     //App's dependencies, including test
     implementation 'com.android.support:support-annotations:22.2.0'
@@ -63,23 +72,6 @@ dependencies {
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
-    //test - runBlockingTest
-    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
-
-    /*Testing libraries*/
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation "io.mockk:mockk:1.12.4"
-    testImplementation "org.mockito:mockito-core:1.9.5"
-
-    testImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.25'
-    //androidTestImplementation "io.mockk:mockk-android:$version" //Para instrumentalTest
-
-    //testImplementation "io.mockk:mockk-agent-jvm:$version"
-    //testImplementation "io.mockk:mockk-common:$version"
-
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
@@ -104,14 +96,28 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.room:room-ktx:2.4.2'
 
-    def koin_version = "3.2.0"
-
     // Koin for Kotlin apps
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"
 
-    // Testing
-    // testImplementation "io.insert-koin:koin-test:3.2.0"
-    // implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
+    debugImplementation("androidx.fragment:fragment-testing:1.5.2")
+
+    /*Testing libraries*/
+    androidTestImplementation "io.insert-koin:koin-test:$koin_version"
+    androidTestImplementation "io.mockk:mockk-android:$mockk_version"
+    androidTestImplementation "io.mockk:mockk-agent-jvm:$mockk_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.mockito:mockito-core:1.9.5"
+    testImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.25'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation "io.mockk:mockk-agent-jvm:$mockk_version"
+
+    //test - runBlockingTest
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
 
 }

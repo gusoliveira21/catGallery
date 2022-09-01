@@ -1,6 +1,5 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.domain.entities.CatEntity

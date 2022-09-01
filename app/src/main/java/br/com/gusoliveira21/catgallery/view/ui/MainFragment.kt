@@ -1,7 +1,6 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.gusoliveira21.catgallery.databinding.MainFragmentBinding
-import br.com.gusoliveira21.catgallery.util.Util.hideKeyBoard
 import br.com.gusoliveira21.catgallery.view.adapter.MainFragmentAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -18,12 +16,14 @@ class MainFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModel()
 
-    private val binding by lazy { MainFragmentBinding.inflate(LayoutInflater.from(requireContext())) }
+    private lateinit var binding : MainFragmentBinding
+
     private var adapter = MainFragmentAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
+        binding = MainFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -40,20 +40,20 @@ class MainFragment : Fragment() {
     }
 
     fun listener(){
-        binding.apply {
-            searchButton.setOnClickListener {
-                viewModel.getCatList(binding.searchFieldId.text.toString())
-                hideKeyBoard(requireActivity(), binding.searchInput)
-                searchFieldId.text?.clear()
-                searchInput.clearFocus()
-            }
-        }
+//        binding.apply {
+//            searchButton.setOnClickListener {
+//                viewModel.getCatList(binding.searchFieldId.text.toString())
+//                hideKeyBoard(requireActivity(), binding.searchInput)
+//                searchFieldId.text?.clear()
+//                searchInput.clearFocus()
+//            }
+//        }
 
     }
 
     private fun showResearchField() {
-        binding.searchButton.visibility = View.VISIBLE
-        binding.searchInput.visibility = View.VISIBLE
+//        binding.searchButton.visibility = View.VISIBLE
+//        binding.searchInput.visibility = View.VISIBLE
     }
 
     private fun adapter(catUriList: MutableList<String>) {
