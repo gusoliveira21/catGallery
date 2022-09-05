@@ -38,7 +38,9 @@ class MainFragment : Fragment() {
         var editSearch: SearchView = search.actionView as SearchView
         editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                Log.e("teste", "Pesquisar!")
+                //Se houver click mas o campo estiver vazio, exiba uma mensagem de aviso.
+                viewModel.getCatList(p0!!)
+                editSearch.clearFocus()
                 return false
             }
 
