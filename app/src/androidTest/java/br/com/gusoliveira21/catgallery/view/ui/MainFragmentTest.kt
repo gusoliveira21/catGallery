@@ -1,9 +1,17 @@
 package br.com.gusoliveira21.catgallery.view.ui
 
 import androidx.fragment.app.testing.launchFragmentInContainer
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
+import br.com.domain.exceptions.NoConnection
 import br.com.domain.repository.CatRepository
 import br.com.domain.usercase.GetCatImagesUseCase
+import br.com.gusoliveira21.catgallery.view.ui.robot.MainRobot
+import com.adevinta.android.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
+import io.mockk.coEvery
 import io.mockk.mockk
 import org.junit.After
 import org.junit.Before
@@ -39,6 +47,37 @@ class MainFragmentTest : KoinTest {
 
     @Test
     fun giveWithoutConnectionThenShowConnectionErrorText() {
-        val scenario = launchFragmentInContainer<MainFragment>()
+        // arrange
+        coEvery { repository.getCats("cat") } throws NoConnection()
+
+        // action
+        launchFragmentInContainer<MainFragment>()
+
+        // assert
+        onView(withText("Sem sinal de internet!")).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun giveWithoutConnectionThenShowConnectionErrorText_withBaristaDependency() {
+        //Reference: https://github.com/AdevintaSpain/Barista
+
+        // arrange
+        coEvery { repository.getCats("cat") } throws NoConnection()
+
+        // action
+        launchFragmentInContainer<MainFragment>()
+
+        // assert
+        assertDisplayed("Sem sinal de internet!")
+    }
+
+    @Test
+    fun giveWithoutConnectionThenShowConnectionErrorText_withRobotPattern() {
+        // arrange
+        coEvery { repository.getCats("cat") } throws NoConnection()
+
+        MainRobot()
+            .startScreen()
+            .verifyNoConnectionDisplayed()
     }
 }
