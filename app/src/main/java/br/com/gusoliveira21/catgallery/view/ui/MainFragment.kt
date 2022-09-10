@@ -30,7 +30,6 @@ class MainFragment : Fragment() {
         setHasOptionsMenu(true)
         return binding.root
     }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
@@ -43,7 +42,6 @@ class MainFragment : Fragment() {
                 editSearch.clearFocus()
                 return false
             }
-
             override fun onQueryTextChange(p0: String?): Boolean {
                 Log.e("teste", "Modando!")
                 return false
@@ -55,15 +53,7 @@ class MainFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
     }
-
-
-
-
-
-
-
-
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
