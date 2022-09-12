@@ -34,8 +34,8 @@ class MainFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
         var search: MenuItem = menu.findItem(R.id.bar_search)
-        var editSearch: SearchView = search.actionView as SearchView
-        editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        var editSearch: SearchView? = search.actionView as? SearchView
+        editSearch?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 //Se houver click mas o campo estiver vazio, exiba uma mensagem de aviso.
                 viewModel.getCatList(p0!!)
