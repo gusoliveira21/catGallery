@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import br.com.gusoliveira21.catgallery.databinding.ItemImgRecyclerBinding
 
-//TODO: Adicionar exibição da imagem em tela grande
 //TODO: Salvar imagens recuperadas no Room e realizar o consumo do Adapter a partir dele
 class MainFragmentAdapter(
     private val onClickItem: (String) -> Unit

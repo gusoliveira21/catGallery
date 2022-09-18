@@ -25,13 +25,12 @@ class MainFragment : Fragment() {
 
     private var adapter = MainFragmentAdapter{ viewModel.onImageClicked(it) }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = MainFragmentBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
     }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
@@ -84,7 +83,6 @@ class MainFragment : Fragment() {
         Toast.makeText(requireContext(),message, Toast.LENGTH_SHORT).show()
     }
 
-//TODO: Exibir imagem selecionada em tela grande
 //TODO: Caso nao tenha internet, exibir mensagem, esperar 3 segundos e fechar o app
 //TODO: Durante a contagem dos tres segundos, o valor deve ser exibido na tela
 }
