@@ -18,5 +18,9 @@
         android:id="@+id/fullscreenImageFragment"
         android:name="br.com.gusoliveira21.catgallery.view.ui.fullscreenImageFragment.FullscreenImageFragment"
         android:label="fragment_fullscreen_image"
-        tools:layout="@layout/fragment_fullscreen_image" />
+        tools:layout="@layout/fragment_fullscreen_image" >
+        <argument
+            android:name="link"
+            app:argType="string" />
+    </fragment>
 </navigation>

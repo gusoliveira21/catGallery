@@ -23,7 +23,7 @@ class MainFragment : Fragment() {
 
     private lateinit var binding : MainFragmentBinding
 
-    private var adapter = MainFragmentAdapter()
+    private var adapter = MainFragmentAdapter{ viewModel.onImageClicked(it) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
@@ -59,7 +59,6 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
-        listener()
     }
 
     private fun setupObservers() {
@@ -68,21 +67,9 @@ class MainFragment : Fragment() {
         viewModel.error.observe(viewLifecycleOwner, Observer(::showError))
     }
 
-    fun listener(){
-//        binding.apply {
-//            searchButton.setOnClickListener {
-//                viewModel.getCatList(binding.searchFieldId.text.toString())
-//                hideKeyBoard(requireActivity(), binding.searchInput)
-//                searchFieldId.text?.clear()
-//                searchInput.clearFocus()
-//            }
-//        }
-
-    }
 
     private fun showResearchField() {
-//        binding.searchButton.visibility = View.VISIBLE
-//        binding.searchInput.visibility = View.VISIBLE
+        //TODO: Exibir a toolbar só depois da splash
     }
 
     private fun adapter(catUriList: MutableList<String>) {

@@ -3,16 +3,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import br.com.gusoliveira21.catgallery.databinding.ItemImgRecyclerBinding
-import br.com.data.modelResultRetrofit.Image
-import br.com.gusoliveira21.catgallery.view.ui.mainFragment.adapter.MainFragmentAdapter.ViewHolder
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import jp.wasabeef.glide.transformations.CropSquareTransformation
+
 //TODO: Adicionar exibição da imagem em tela grande
 //TODO: Salvar imagens recuperadas no Room e realizar o consumo do Adapter a partir dele
-class MainFragmentAdapter : ListAdapter<br.com.data.modelResultRetrofit.Image, ViewHolder>(
+class MainFragmentAdapter(
+    private val onClickItem: (String) -> Unit
+): ListAdapter<br.com.data.modelResultRetrofit.Image, ViewHolder>(
     DiffCallBack()
 ) {
     var catUriList: MutableList<String> = mutableListOf()
@@ -24,13 +21,19 @@ class MainFragmentAdapter : ListAdapter<br.com.data.modelResultRetrofit.Image, V
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.putImagem(catUriList[position])
+        holder.imageClicked(catUriList[position], onClickItem)
     }
 
     override fun getItemCount() = catUriList.size
 
-    class ViewHolder(itemView: ItemImgRecyclerBinding) : RecyclerView.ViewHolder(itemView.root) {
+    /*class ViewHolder(itemView: ItemImgRecyclerBinding) : RecyclerView.ViewHolder(itemView.root) {
         private val viewImagem = itemView.imageCat
 
+        fun imageClicked(link: String){
+            viewImagem.setOnClickListener {
+                Log.e("tag",link)
+            }
+        }
         fun putImagem(link: String) {
             Glide
                 .with(itemView.rootView.context)
@@ -38,8 +41,7 @@ class MainFragmentAdapter : ListAdapter<br.com.data.modelResultRetrofit.Image, V
                 .apply(RequestOptions.bitmapTransform(CropSquareTransformation()))
                 .into(viewImagem)
         }
-
-    }
+    }*/
 }
 
 class DiffCallBack : DiffUtil.ItemCallback<br.com.data.modelResultRetrofit.Image>() {

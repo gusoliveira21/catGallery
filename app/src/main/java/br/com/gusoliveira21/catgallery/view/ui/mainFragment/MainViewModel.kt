@@ -11,4 +11,5 @@ abstract class MainViewModel : ViewModel() {
 
     abstract fun getCatList(wordToSearch:String = "cat")
 
+    abstract fun onImageClicked(link: String)
 }

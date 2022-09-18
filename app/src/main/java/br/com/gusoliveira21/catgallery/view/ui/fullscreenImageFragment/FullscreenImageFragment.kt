@@ -27,6 +27,5 @@ class FullscreenImageFragment : Fragment() {
 
         _binding = FragmentFullscreenImageBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 }
