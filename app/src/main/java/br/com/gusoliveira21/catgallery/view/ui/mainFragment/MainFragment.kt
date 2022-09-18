@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.view.ui
+package br.com.gusoliveira21.catgallery.view.ui.mainFragment
 
 import android.os.Bundle
 import android.util.Log
@@ -8,16 +8,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.gusoliveira21.catgallery.R
 import br.com.gusoliveira21.catgallery.databinding.MainFragmentBinding
-import br.com.gusoliveira21.catgallery.view.adapter.MainFragmentAdapter
+import br.com.gusoliveira21.catgallery.view.ui.mainFragment.adapter.MainFragmentAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class MainFragment : Fragment() {
-
-    private val viewModel: MainViewModel by viewModel()
+    private val navController by lazy { findNavController() }
+    private val viewModel: MainViewModel by viewModel{ parametersOf(navController)}
 
     private lateinit var binding : MainFragmentBinding
 

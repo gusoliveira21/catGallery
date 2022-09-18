@@ -1,12 +1,16 @@
-package br.com.gusoliveira21.catgallery.view.ui
+package br.com.gusoliveira21.catgallery.view.ui.mainFragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.domain.entities.CatEntity
 import br.com.domain.usercase.GetCatImagesUseCase
+import br.com.gusoliveira21.catgallery.view.router.RouterFragment
 import kotlinx.coroutines.launch
 
-class MainViewModelImpl(private val getCatImagesUseCase: GetCatImagesUseCase) : MainViewModel() {
+class MainViewModelImpl(
+    private val getCatImagesUseCase: GetCatImagesUseCase,
+    private val router: RouterFragment
+    ) : MainViewModel() {
 
     override val catList = MutableLiveData<MutableList<String>>()
 

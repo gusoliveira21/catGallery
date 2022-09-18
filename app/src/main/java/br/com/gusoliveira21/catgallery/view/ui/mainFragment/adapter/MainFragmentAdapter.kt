@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.view.adapter
+package br.com.gusoliveira21.catgallery.view.ui.mainFragment.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.gusoliveira21.catgallery.databinding.ItemImgRecyclerBinding
 import br.com.data.modelResultRetrofit.Image
+import br.com.gusoliveira21.catgallery.view.ui.mainFragment.adapter.MainFragmentAdapter.ViewHolder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import jp.wasabeef.glide.transformations.CropSquareTransformation
 //TODO: Adicionar exibição da imagem em tela grande
 //TODO: Salvar imagens recuperadas no Room e realizar o consumo do Adapter a partir dele
-class MainFragmentAdapter : ListAdapter<br.com.data.modelResultRetrofit.Image, MainFragmentAdapter.ViewHolder>(DiffCallBack()) {
+class MainFragmentAdapter : ListAdapter<br.com.data.modelResultRetrofit.Image, ViewHolder>(
+    DiffCallBack()
+) {
     var catUriList: MutableList<String> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val bindingRecyclerView = ItemImgRecyclerBinding.inflate(
