@@ -7,18 +7,18 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:label="main_fragment"
         android:name="br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainFragment"
-        tools:layout="@layout/main_fragment" >
+        android:label="CatGallery"
+        tools:layout="@layout/main_fragment">
         <action
             android:id="@+id/action_mainFragment_to_fullscreenImageFragment"
             app:destination="@id/fullscreenImageFragment" />
     </fragment>
     <fragment
         android:id="@+id/fullscreenImageFragment"
-        android:label="fragment_fullscreen_image"
         android:name="br.com.gusoliveira21.catgallery.view.ui.fullscreenImageFragment.FullscreenImageFragment"
-        tools:layout="@layout/fragment_fullscreen_image" >
+        android:label="Gallery"
+        tools:layout="@layout/fragment_fullscreen_image">
         <argument
             android:name="link"
             app:argType="string" />
