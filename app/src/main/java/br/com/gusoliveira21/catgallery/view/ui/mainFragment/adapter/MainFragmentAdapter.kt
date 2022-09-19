@@ -24,23 +24,6 @@ class MainFragmentAdapter(
     }
 
     override fun getItemCount() = catUriList.size
-
-    /*class ViewHolder(itemView: ItemImgRecyclerBinding) : RecyclerView.ViewHolder(itemView.root) {
-        private val viewImagem = itemView.imageCat
-
-        fun imageClicked(link: String){
-            viewImagem.setOnClickListener {
-                Log.e("tag",link)
-            }
-        }
-        fun putImagem(link: String) {
-            Glide
-                .with(itemView.rootView.context)
-                .load(link)
-                .apply(RequestOptions.bitmapTransform(CropSquareTransformation()))
-                .into(viewImagem)
-        }
-    }*/
 }
 
 class DiffCallBack : DiffUtil.ItemCallback<br.com.data.modelResultRetrofit.Image>() {
