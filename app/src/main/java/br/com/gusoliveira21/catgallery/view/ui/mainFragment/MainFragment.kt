@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.*
 import android.widget.SearchView
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
@@ -13,8 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.gusoliveira21.catgallery.R
-import br.com.gusoliveira21.catgallery.databinding.FragmentFullscreenImageBinding
-import br.com.gusoliveira21.catgallery.databinding.FragmentFullscreenImageBinding.inflate
 import br.com.gusoliveira21.catgallery.databinding.MainFragmentBinding
 import br.com.gusoliveira21.catgallery.view.ui.mainFragment.adapter.MainFragmentAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
