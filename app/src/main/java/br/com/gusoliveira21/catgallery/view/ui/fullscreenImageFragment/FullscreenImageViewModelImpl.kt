@@ -17,4 +17,5 @@ class FullscreenImageViewModelImpl(
             .apply(RequestOptions.bitmapTransform(CropSquareTransformation()))
             .into(imageSource)
     }
+
 }
