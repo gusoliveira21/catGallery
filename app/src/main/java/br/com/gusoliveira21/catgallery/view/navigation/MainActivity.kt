@@ -1,16 +1,9 @@
 package br.com.gusoliveira21.catgallery.view.navigation
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import br.com.gusoliveira21.catgallery.R
 
@@ -26,5 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this,navController)
     }
-
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.fragmentContainerView)
+        return navController.navigateUp()
+    }
 }

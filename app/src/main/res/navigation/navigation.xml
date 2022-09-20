@@ -7,7 +7,20 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="br.com.gusoliveira21.catgallery.view.ui.MainFragment"
-        android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        android:name="br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainFragment"
+        android:label="CatGallery"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_fullscreenImageFragment"
+            app:destination="@id/fullscreenImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullscreenImageFragment"
+        android:name="br.com.gusoliveira21.catgallery.view.ui.fullscreenImageFragment.FullscreenImageFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_fullscreen_image">
+        <argument
+            android:name="link"
+            app:argType="string" />
+    </fragment>
 </navigation>

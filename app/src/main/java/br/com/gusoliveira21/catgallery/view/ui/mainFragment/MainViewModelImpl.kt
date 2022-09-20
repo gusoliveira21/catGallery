@@ -1,12 +1,17 @@
-package br.com.gusoliveira21.catgallery.view.ui
+package br.com.gusoliveira21.catgallery.view.ui.mainFragment
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.domain.entities.CatEntity
 import br.com.domain.usercase.GetCatImagesUseCase
+import br.com.gusoliveira21.catgallery.view.router.Router
 import kotlinx.coroutines.launch
 
-class MainViewModelImpl(private val getCatImagesUseCase: GetCatImagesUseCase) : MainViewModel() {
+class MainViewModelImpl(
+    private val getCatImagesUseCase: GetCatImagesUseCase,
+    private val router: Router
+) : MainViewModel() {
 
     override val catList = MutableLiveData<MutableList<String>>()
 
@@ -16,13 +21,17 @@ class MainViewModelImpl(private val getCatImagesUseCase: GetCatImagesUseCase) : 
         getCatList()
     }
 
-    override fun getCatList(wordToSearch:String) {
-        if(wordToSearch.isNotBlank() || wordToSearch.isNotEmpty()) {
+    override fun getCatList(wordToSearch: String) {
+        if (wordToSearch.isNotBlank() || wordToSearch.isNotEmpty()) {
             viewModelScope.launch {
                 val result = getCatImagesUseCase.execute(wordToSearch)
                 result.handleResult(::getCatListSuccess, ::getCatListFailure)
             }
         }
+    }
+
+    override fun onImageClicked(link: String) {
+        router.mainFragmentToFullscreenImageFragment(link)
     }
 
     private fun getCatListSuccess(list: List<CatEntity>) {
