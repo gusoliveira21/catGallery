@@ -106,6 +106,7 @@ dependencies {
 
     /*Testing libraries*/
     androidTestImplementation "io.insert-koin:koin-test:$koin_version"
+    androidTestImplementation "io.insert-koin:koin-test-junit4:$koin_version"
     androidTestImplementation "io.mockk:mockk-android:$mockk_version"
     androidTestImplementation "io.mockk:mockk-agent-jvm:$mockk_version"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

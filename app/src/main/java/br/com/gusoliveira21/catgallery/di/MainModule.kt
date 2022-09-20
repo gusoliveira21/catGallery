@@ -6,7 +6,7 @@ import br.com.data.api.RetrofitInicializer
 import br.com.data.repository.CatRepositoryImpl
 import br.com.domain.repository.CatRepository
 import br.com.domain.usercase.GetCatImagesUseCase
-import br.com.gusoliveira21.catgallery.view.router.RouterFragment
+import br.com.gusoliveira21.catgallery.view.router.Router
 import br.com.gusoliveira21.catgallery.view.ui.fullscreenImageFragment.FullscreenImageFragmentArgs
 import br.com.gusoliveira21.catgallery.view.ui.fullscreenImageFragment.FullscreenImageViewModel
 import br.com.gusoliveira21.catgallery.view.ui.fullscreenImageFragment.FullscreenImageViewModelImpl
@@ -23,7 +23,7 @@ val mainModule = module {
 
     factory { GetCatImagesUseCase(get()) }
 
-    factory { (navController: NavController) -> RouterFragment(navController) }
+    factory { (navController: NavController) -> Router(navController) }
 
     viewModel<MainViewModel> { (navController: NavController) ->
         MainViewModelImpl(
