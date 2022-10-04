@@ -1,4 +1,4 @@
-package br.com.data
+package br.com.data.repository
 
 import br.com.data.modelResultRetrofit.CatDataClass
 import br.com.data.api.RetrofitInicializer

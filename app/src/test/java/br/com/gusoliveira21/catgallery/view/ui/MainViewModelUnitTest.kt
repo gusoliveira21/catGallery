@@ -9,6 +9,7 @@ import br.com.gusoliveira21.catgallery.MainCoroutineRule
 import br.com.gusoliveira21.catgallery.catDataExpected
 import br.com.gusoliveira21.catgallery.catDataReality
 import br.com.gusoliveira21.catgallery.extension.getOrAwaitValue
+import br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainViewModelImpl
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

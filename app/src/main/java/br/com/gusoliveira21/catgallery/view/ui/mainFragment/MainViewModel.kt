@@ -1,4 +1,4 @@
-package br.com.gusoliveira21.catgallery.view.ui
+package br.com.gusoliveira21.catgallery.view.ui.mainFragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -11,4 +11,5 @@ abstract class MainViewModel : ViewModel() {
 
     abstract fun getCatList(wordToSearch:String = "cat")
 
+    abstract fun onImageClicked(link: String)
 }
