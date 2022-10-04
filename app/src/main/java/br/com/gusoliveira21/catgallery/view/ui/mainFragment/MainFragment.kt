@@ -20,14 +20,15 @@ import org.koin.core.parameter.parametersOf
 class MainFragment : Fragment() {
     private val navController by lazy { findNavController() }
 
-    private val viewModel: MainViewModel by viewModel{ parametersOf(navController)}
+    private val viewModel: MainViewModel by viewModel { parametersOf(navController) }
 
-    private lateinit var binding : MainFragmentBinding
+    private lateinit var binding: MainFragmentBinding
 
-    private var adapter = MainFragmentAdapter{ viewModel.onImageClicked(it) }
+    private var adapter = MainFragmentAdapter { viewModel.onImageClicked(it) }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = MainFragmentBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
@@ -40,26 +41,32 @@ class MainFragment : Fragment() {
         var editSearch: SearchView = search.actionView as SearchView
         editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(word: String?): Boolean {
-
                 //TODO: Se houver click mas o campo estiver vazio, exiba uma mensagem de aviso.
                 viewModel.getCatList(word!!)
                 //Util.haveWord(word!!)?.let { viewModel.getCatList(it) }
-                editSearch.clearFocus()
+                var editSearch: SearchView? = search.actionView as? SearchView
+                editSearch?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(p0: String?): Boolean {
+                        viewModel.getCatList(p0!!)
+                        editSearch.clearFocus()
+                        return false
+                    }
 
+                    override fun onQueryTextChange(p0: String?): Boolean {
+                        Log.e("teste", "Mudando!")
+                        return false
+                    }
+                })
                 return false
             }
-            override fun onQueryTextChange(p0: String?): Boolean {
-                Log.e("teste", "Mudando!")
-                return false
-            }
-        }
-        )
+
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
@@ -83,9 +90,9 @@ class MainFragment : Fragment() {
         showResearchField()
     }
 
-    private fun showError(message: String)  {
+    private fun showError(message: String) {
         binding.textAviso.visibility = View.VISIBLE
-        Toast.makeText(requireContext(),message, Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
 //TODO: Caso nao tenha internet, exibir mensagem, esperar 3 segundos e fechar o app
