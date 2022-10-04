@@ -41,11 +41,10 @@ class MainFragment : Fragment() {
         var editSearch: SearchView = search.actionView as SearchView
         editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(word: String?): Boolean {
-                //TODO: Se houver click mas o campo estiver vazio, exiba uma mensagem de aviso.
                 viewModel.getCatList(word!!)
-                //Util.haveWord(word!!)?.let { viewModel.getCatList(it) }
                 var editSearch: SearchView? = search.actionView as? SearchView
                 editSearch?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
                     override fun onQueryTextSubmit(p0: String?): Boolean {
                         viewModel.getCatList(p0!!)
                         editSearch.clearFocus()
@@ -53,10 +52,16 @@ class MainFragment : Fragment() {
                     }
 
                     override fun onQueryTextChange(p0: String?): Boolean {
-                        Log.e("teste", "Mudando!")
+                        Log.e("teste", "Mudando -> $p0")
                         return false
                     }
+
                 })
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                Log.e("teste", "Mudando!")
                 return false
             }
 
@@ -75,7 +80,6 @@ class MainFragment : Fragment() {
     private fun setupObservers() {
         viewModel.catList.observe(viewLifecycleOwner, Observer(::adapter))
         viewModel.error.observe(viewLifecycleOwner, Observer(::showError))
-        //viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
     }
 
 
