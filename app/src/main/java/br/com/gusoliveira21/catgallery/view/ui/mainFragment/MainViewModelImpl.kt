@@ -1,6 +1,5 @@
 package br.com.gusoliveira21.catgallery.view.ui.mainFragment
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.domain.entities.CatEntity
@@ -14,7 +13,6 @@ class MainViewModelImpl(
 ) : MainViewModel() {
 
     override val catList = MutableLiveData<MutableList<String>>()
-
     override val error = MutableLiveData<String>()
 
     init {

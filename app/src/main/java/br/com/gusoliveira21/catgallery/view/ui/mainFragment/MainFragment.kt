@@ -19,6 +19,7 @@ import org.koin.core.parameter.parametersOf
 
 class MainFragment : Fragment() {
     private val navController by lazy { findNavController() }
+
     private val viewModel: MainViewModel by viewModel{ parametersOf(navController)}
 
     private lateinit var binding : MainFragmentBinding
@@ -38,14 +39,17 @@ class MainFragment : Fragment() {
         var search: MenuItem = menu.findItem(R.id.bar_search)
         var editSearch: SearchView = search.actionView as SearchView
         editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
-                //Se houver click mas o campo estiver vazio, exiba uma mensagem de aviso.
-                viewModel.getCatList(p0!!)
+            override fun onQueryTextSubmit(word: String?): Boolean {
+
+                //TODO: Se houver click mas o campo estiver vazio, exiba uma mensagem de aviso.
+                viewModel.getCatList(word!!)
+                //Util.haveWord(word!!)?.let { viewModel.getCatList(it) }
                 editSearch.clearFocus()
+
                 return false
             }
             override fun onQueryTextChange(p0: String?): Boolean {
-                Log.e("teste", "Modando!")
+                Log.e("teste", "Mudando!")
                 return false
             }
         }
