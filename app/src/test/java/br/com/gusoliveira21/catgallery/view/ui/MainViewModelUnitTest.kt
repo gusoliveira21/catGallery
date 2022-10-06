@@ -29,27 +29,27 @@ class MainViewModelUnitTest {
     @Test
     fun `quando a ViewModel busca os dados ela deve chamar o repositorio`() {
         // arrange
-        coEvery { repository.getCats() } returns catDataReality
+        coEvery { repository.getCats("cats") } returns catDataReality
         val viewModel = MainViewModelImpl(GetCatImagesUseCase(repository))
 
         // act
-        viewModel.getListRetrofit()
+        viewModel.getCatList("cats")
 
         // assert
-        coVerify { repository.getCats() }
+        coVerify { repository.getCats("cats") }
     }
 
     @Test
     fun `dado que o viewModel foi iniciado, quando eu chamar o metodo para obter os dados entao a lista de gatos e retornada com sucesso`() {
         // arrange
-        coEvery { repository.getCats() } returns catDataReality
+        coEvery { repository.getCats("cats") } returns catDataReality
         val viewModel = MainViewModelImpl(GetCatImagesUseCase(repository))
 
         // act
-        viewModel.getListRetrofit()
+        viewModel.getCatList("cats")
 
         // assert
-        val value = viewModel.catUriList.getOrAwaitValue()
+        val value = viewModel.catList.getOrAwaitValue()
         assertThat(value).isEqualTo(catDataExpected)
     }
 }

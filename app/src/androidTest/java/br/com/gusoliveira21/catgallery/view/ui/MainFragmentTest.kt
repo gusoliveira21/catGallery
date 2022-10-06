@@ -70,8 +70,8 @@ class MainFragmentTest : KoinTest {
         // assert
         assertDisplayed("Sem sinal de internet!")
     }
-
-    @Test
+    //TODO: 
+    /*@Test
     fun giveWithoutConnectionThenShowConnectionErrorText_withRobotPattern() {
         // arrange
         coEvery { repository.getCats("cat") } throws NoConnection()
@@ -79,5 +79,5 @@ class MainFragmentTest : KoinTest {
         MainRobot()
             .startScreen()
             .verifyNoConnectionDisplayed()
-    }
+    }*/
 }
