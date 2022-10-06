@@ -70,7 +70,7 @@ class MainFragmentTest : KoinTest {
         // assert
         assertDisplayed("Sem sinal de internet!")
     }
-    //TODO: 
+    //TODO:
     /*@Test
     fun giveWithoutConnectionThenShowConnectionErrorText_withRobotPattern() {
         // arrange
