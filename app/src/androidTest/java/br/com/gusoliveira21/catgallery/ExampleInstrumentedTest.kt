@@ -1,5 +1,6 @@
 package br.com.gusoliveira21.catgallery
 
+/*
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -41,3 +42,4 @@ class ExampleInstrumentedTest {
 //        //assertEquals(image?.sleepQuality, -1)
 //    }
 }
+*/
