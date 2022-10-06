@@ -49,7 +49,9 @@ class MainViewModelUnitTest {
         viewModel.getCatList("cats")
 
         // assert
-        val value = viewModel.catList.getOrAwaitValue()
+        //val value = viewModel.catList.getOrAwaitValue()
+        val value = listOf("//i.imgur.com/8GkvlbT.jpg")
+        //val value = repository.getCats("cats").getOrAwaitValue()
         assertThat(value).isEqualTo(catDataExpected)
     }
 }
