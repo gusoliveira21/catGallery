@@ -39,6 +39,7 @@ class MainViewModelUnitTest {
         coVerify { repository.getCats("cats") }
     }
 
+    //TODO: Corrigir teste
     @Test
     fun `dado que o viewModel foi iniciado, quando eu chamar o metodo para obter os dados entao a lista de gatos e retornada com sucesso`() {
         // arrange
@@ -49,9 +50,10 @@ class MainViewModelUnitTest {
         viewModel.getCatList("cats")
 
         // assert
-        //val value = viewModel.catList.getOrAwaitValue()
         val value = listOf("//i.imgur.com/8GkvlbT.jpg")
+        //val value = viewModel.catList.getOrAwaitValue()
         //val value = repository.getCats("cats").getOrAwaitValue()
+        //val value = viewModel.getCatListSuccess()
         assertThat(value).isEqualTo(catDataExpected)
     }
 }
