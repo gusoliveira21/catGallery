@@ -4,12 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.domain.entities.CatEntity
 import br.com.domain.usercase.GetCatImagesUseCase
-import br.com.gusoliveira21.catgallery.view.router.Router
+import br.com.gusoliveira21.catgallery.view.router.RouterMainFragToFullscreenFrag
 import kotlinx.coroutines.launch
 
 class MainViewModelImpl(
     private val getCatImagesUseCase: GetCatImagesUseCase,
-    private val router: Router
+    private val routerMainFragToFullscreenFrag: RouterMainFragToFullscreenFrag
 ) : MainViewModel() {
 
     override val catList = MutableLiveData<MutableList<String>>()
@@ -29,7 +29,7 @@ class MainViewModelImpl(
     }
 
     override fun onImageClicked(link: String) {
-        router.mainFragmentToFullscreenImageFragment(link)
+        routerMainFragToFullscreenFrag.mainFragmentToFullscreenImageFragment(link)
     }
 
     private fun getCatListSuccess(list: List<CatEntity>) {

@@ -17,6 +17,7 @@ import br.com.gusoliveira21.catgallery.view.ui.mainFragment.adapter.MainFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
+@Suppress("NAME_SHADOWING")
 class MainFragment : Fragment() {
     private val navController by lazy { findNavController() }
 
@@ -37,12 +38,12 @@ class MainFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
-        var search: MenuItem = menu.findItem(R.id.bar_search)
-        var editSearch: SearchView = search.actionView as SearchView
-        editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        var search: MenuItem? = menu.findItem(R.id.bar_search)
+        var editSearch: SearchView? = search?.actionView as? SearchView
+        editSearch?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(word: String?): Boolean {
                 viewModel.getCatList(word!!)
-                var editSearch: SearchView? = search.actionView as? SearchView
+                var editSearch: SearchView? = search?.actionView as? SearchView
                 editSearch?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
                     override fun onQueryTextSubmit(p0: String?): Boolean {
