@@ -12,4 +12,14 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+
+    <color name="primaryColorLight">#ffafff</color>
+    <color name="primaryLightColorLight">#ffe2ff</color>
+    <color name="primaryDarkColorLight">#cb7ecc</color>
+    <color name="primaryTextColorLight">#000000</color>
+
+    <color name="primaryColorNight">#895689</color>
+    <color name="primaryLightColorNight">#ba84b9</color>
+    <color name="primaryDarkColorNight">#5b2b5c</color>
+    <color name="primaryTextColorNight">#ffffff</color>
 </resources>

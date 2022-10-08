@@ -4,14 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ic_launcher_background"
     android:theme="@style/ThemeOverlay.CatGallery.FullscreenContainer"
     tools:context=".view.ui.fullscreenImageFragment.FullscreenImageFragment">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ImageView
             android:id="@+id/image_source"
             android:layout_width="match_parent"
