@@ -27,10 +27,13 @@ class FullscreenImageFragment : Fragment() {
     }
 
     fun setFullscreenImage() {
-        viewModel.setFullscreenImage(
+        viewModel.setFullscreenImageWithPalletColor(
             requireContext().applicationContext,
-            binding.imageSource
+            binding.imageSource,
+            binding.cardview
         )
+
+
     }
 
 
