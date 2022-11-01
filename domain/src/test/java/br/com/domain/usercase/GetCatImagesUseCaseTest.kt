@@ -36,6 +36,7 @@ class GetCatImagesUseCaseTest {
         // act
         val result = getCatImagesUseCaseTest.execute("cat")
 
+
         // assert
         assertThat(result.success.data.first().image).isEqualTo(catDataExpected)
     }

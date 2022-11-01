@@ -94,6 +94,7 @@ class MainViewModelUnitTest {
 
         // assert
         val value = viewModel.catList.getOrAwaitValue()
+
         assertThat(value).isEqualTo(catDataExpected)
     }
 }*/
