@@ -4,7 +4,7 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
-import br.com.gusoliveira21.catgallery.view.ui.MainFragment
+import br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainFragment
 
 // Reference:  https://medium.com/android-bits/espresso-robot-pattern-in-kotlin-fc820ce250f7
 class MainRobot {

@@ -1,16 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.CatGallery" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+    <style name="MyToolbar" parent="Base.V14.Theme.MaterialComponents.Bridge">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:minHeight">?attr/actionBarSize</item> <!--Sem esse o layout fica falho-->
+        <item name="titleMargin">8dp</item>  <!--faz o titulo da pag. ir pra direita-->
+        <item name="maxButtonHeight">68dp</item>
+        <item name="buttonGravity">top</item>
+        <item name="collapseIcon">?attr/homeAsUpIndicator</item>
+    </style>
+
+    <style name="Theme.Splash" parent="Theme.Material3.Dark">
+        <item name="colorPrimaryVariant">@color/primaryDarkColorNight</item> <!--cor da barra de notificação-->
+        <item name="colorPrimary">@color/primaryColorNight</item> <!--cor de fundo do app bar-->
+        <item name="colorOnBackground">@color/primaryLightColorNight</item> <!--Define a cor de fundo do Splash-->
+        <item name="toolbarStyle">@style/MyToolbar</item>
+        <item name="colorSecondary">?attr/colorPrimaryVariant</item> <!--pin da pesquisa-->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="ThemeOverlay.CatGallery.FullscreenContainer" parent="Theme.Splash">
+        <item name="android:backgroundTint">?attr/colorOnBackground</item>
     </style>
 </resources>

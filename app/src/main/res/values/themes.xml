@@ -1,29 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CatGallery" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/design_default_color_primary</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.CatGallery" parent="Theme.Splash">
+
     </style>
-    <style name="Theme.Splash" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/design_default_color_primary</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">@color/purple_500</item>
+
+    <style name="MyToolbar" parent="">
+        <!--item name="titleTextColor">@color/white</item-->
+        <!--item name="iconTint">@color/white</item-->
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:minHeight">?attr/actionBarSize</item> <!--Sem esse o layout fica falho-->
+        <item name="titleMargin">8dp</item>  <!--faz o titulo da pag. ir pra direita-->
+        <item name="maxButtonHeight">68dp</item>
+        <item name="collapseIcon">?attr/homeAsUpIndicator</item>
+        <item name="buttonGravity">top</item>
+    </style>
+
+    <style name="Theme.Splash" parent="Theme.Material3.DayNight">
+        <item name="toolbarStyle">@style/MyToolbar</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColorLight</item> <!--cor da barra de notificação-->
+        <item name="colorPrimary">@color/primaryColorLight</item> <!--cor de fundo do app bar-->
+        <item name="colorOnBackground">@color/primaryLightColorLight</item> <!--Define a cor de fundo do Splash-->
+        <item name="colorSecondary">?attr/colorPrimaryVariant</item> <!--pin da pesquisa-->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="ThemeOverlay.CatGallery.FullscreenContainer" parent="Theme.Splash">
+        <item name="android:backgroundTint">?attr/colorOnBackground</item>
+        <!--item name="fullscreenBackgroundColor">@color/light_blue_600</item-->
+        <!--item name="fullscreenTextColor">@color/light_blue_A200</item-->
     </style>
 
 </resources>

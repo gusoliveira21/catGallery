@@ -30,11 +30,12 @@ class GetCatImagesUseCaseTest {
     @Test
     fun `checks if the function return is a link`() = runBlocking {
         // arrange
-        coEvery { repository.getCats("cats") } returns catDataReality
+        coEvery { repository.getCats("cat") } returns catDataReality
         val getCatImagesUseCaseTest = GetCatImagesUseCase(repository)
 
         // act
-        val result = getCatImagesUseCaseTest.execute("cats")
+        val result = getCatImagesUseCaseTest.execute("cat")
+
 
         // assert
         assertThat(result.success.data.first().image).isEqualTo(catDataExpected)

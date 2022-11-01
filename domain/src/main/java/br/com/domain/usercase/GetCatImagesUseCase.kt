@@ -10,21 +10,10 @@ class GetCatImagesUseCase(private val catRepository: CatRepository): BaseUseCase
         val result = catRepository.getCats(wordToSearch)
         val catList: MutableList<CatEntity> = mutableListOf()
         result.forEach { image ->
-            if (image.type != "video/mp4" || image.type != "image/gif") {
+            if (image.type != "video/mp4" && image.type != "image/gif") {
                 catList.add(image)
             }
         }
         return catList
     }
-
-//    private fun getListImg(listData: CatDataClass) {
-//        val listUriCat: MutableList<String> = mutableListOf()
-//        listData.data.forEach { dataList ->
-//            dataList.images.forEach { imageList ->
-//                if (imageList.type != "video/mp4" || imageList.type != "image/gif") {
-//                    listUriCat.add(imageList.link)
-//                }
-//            }
-//        }
-//    }
 }
