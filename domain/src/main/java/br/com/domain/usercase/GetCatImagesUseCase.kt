@@ -10,7 +10,7 @@ class GetCatImagesUseCase(private val catRepository: CatRepository): BaseUseCase
         val catList: MutableList<CatEntity> = mutableListOf()
 
         result.forEach { image ->
-            if (image.type != "video/mp4" || image.type != "image/gif") {
+            if (image.type != "video/mp4" && image.type != "image/gif") {
                 catList.add(image)
             }
         }
