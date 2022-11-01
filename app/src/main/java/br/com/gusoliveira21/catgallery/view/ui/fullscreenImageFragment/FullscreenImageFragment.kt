@@ -20,7 +20,7 @@ class FullscreenImageFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFullscreenImageBinding.inflate(inflater, container, false)
         setFullscreenImage()
         return binding.root

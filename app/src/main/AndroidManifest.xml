@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.com.gusoliveira21.catgallery">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -11,7 +12,9 @@
         android:supportsRtl="true"
         android:name=".application.CatApplication"
         android:theme="@style/Theme.Splash"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        tools:targetApi="s">
         <activity
             android:name=".view.navigation.MainActivity"
             android:exported="true">

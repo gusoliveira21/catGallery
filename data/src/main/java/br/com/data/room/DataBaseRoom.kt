@@ -1,7 +1,7 @@
 package br.com.data.room
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
+/*import androidx.room.Database
+import androidx.room.RoomDatabase*/
 //import br.com.data.room.TableImagemRoom
 /*
 @Database(entities = [TableImagemRoom::class], version = 1, exportSchema = false)

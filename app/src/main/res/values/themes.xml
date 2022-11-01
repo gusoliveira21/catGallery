@@ -21,14 +21,8 @@
         <item name="colorPrimary">@color/primaryColorLight</item> <!--cor de fundo do app bar-->
         <item name="colorOnBackground">@color/primaryLightColorLight</item> <!--Define a cor de fundo do Splash-->
         <item name="colorSecondary">?attr/colorPrimaryVariant</item> <!--pin da pesquisa-->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <item name="android:windowBackground">@drawable/splash</item>
-    </style>
-
-    <style name="ThemeOverlay.CatGallery.FullscreenContainer" parent="Theme.Splash">
-        <item name="android:backgroundTint">?attr/colorOnBackground</item>
-        <!--item name="fullscreenBackgroundColor">@color/light_blue_600</item-->
-        <!--item name="fullscreenTextColor">@color/light_blue_A200</item-->
     </style>
 
 </resources>
