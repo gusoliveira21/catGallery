@@ -13,7 +13,8 @@ class MainRobot {
         launchFragmentInContainer<MainFragment>()
     }
 
-   fun verifyNoConnectionDisplayed() = apply {
-       Espresso.onView(ViewMatchers.withText("Sem sinal de internet!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-   }
+    fun verifyNoConnectionDisplayed() = apply {
+        Espresso.onView(ViewMatchers.withText("Sem sinal de internet!"))
+            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+    }
 }

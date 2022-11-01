@@ -7,7 +7,7 @@ import org.koin.core.context.GlobalContext.loadKoinModules
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.module.Module
 
-class KoinTestApp: Application() {
+class KoinTestApp : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {

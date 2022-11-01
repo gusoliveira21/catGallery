@@ -17,7 +17,6 @@ import br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainFragment
 import br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainFragmentDirections
 import br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainViewModel
 import br.com.gusoliveira21.catgallery.view.ui.mainFragment.MainViewModelImpl
-import br.com.gusoliveira21.catgallery.view.ui.robot.MainRobot
 import com.adevinta.android.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import io.mockk.coEvery
 import io.mockk.mockk
