@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">catGallery</string>
+    <string name="app_name">CatGallery</string>
     <string name="imagem">Imagem</string>
     <string name="logo_do_app">Logo do app</string>
     <string name="sem_sinal_de_internet">Sem sinal de internet!</string>

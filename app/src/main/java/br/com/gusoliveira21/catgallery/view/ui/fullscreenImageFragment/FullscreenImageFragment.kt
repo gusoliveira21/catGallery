@@ -10,7 +10,6 @@ import br.com.gusoliveira21.catgallery.databinding.FragmentFullscreenImageBindin
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-
 class FullscreenImageFragment : Fragment() {
 
     private val args: FullscreenImageFragmentArgs by navArgs()
@@ -20,17 +19,21 @@ class FullscreenImageFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentFullscreenImageBinding.inflate(inflater, container, false)
         setFullscreenImage()
         return binding.root
     }
 
-    fun setFullscreenImage() {
-        viewModel.setFullscreenImage(
+    private fun setFullscreenImage() {
+        viewModel.setFullscreenImageWithPalletColor(
             requireContext().applicationContext,
-            binding.imageSource
+            binding.imageSource,
+            binding.layoutFullscreen
         )
+
+
     }
 
 
