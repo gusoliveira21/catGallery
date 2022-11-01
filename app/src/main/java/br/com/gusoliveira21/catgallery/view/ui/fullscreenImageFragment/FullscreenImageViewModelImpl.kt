@@ -5,9 +5,10 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Handler
 import android.os.Looper
+import android.widget.FrameLayout
 import android.widget.ImageView
-import androidx.palette.graphics.Palette
 import androidx.core.content.ContextCompat
+import androidx.palette.graphics.Palette
 import br.com.gusoliveira21.catgallery.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -15,12 +16,10 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
-import com.google.android.material.card.MaterialCardView
 import jp.wasabeef.glide.transformations.CropSquareTransformation
 
-class FullscreenImageViewModelImpl(
-    private val args: FullscreenImageFragmentArgs
-    ) :FullscreenImageViewModel(){
+class FullscreenImageViewModelImpl( private val args: FullscreenImageFragmentArgs )
+    : FullscreenImageViewModel() {
 
     override fun setFullscreenImage(applicationContext: Context, imageSource: ImageView) {
         Glide
@@ -30,7 +29,11 @@ class FullscreenImageViewModelImpl(
             .into(imageSource)
     }
 
-    override fun setFullscreenImageWithPalletColor(context: Context, viewImagem: ImageView, cardView: MaterialCardView){
+    override fun setFullscreenImageWithPalletColor(
+        context: Context,
+        viewImagem: ImageView,
+        cardView: FrameLayout
+    ) {
         Handler(Looper.getMainLooper()).post {
             Glide.with(context)
                 .load(args.link)
@@ -46,6 +49,7 @@ class FullscreenImageViewModelImpl(
                         return false
                     }
 
+                    //TODO: Se estiver no modo escuro não se deve ativar o Pallet, deve-se ativar uma cor escura padrão
                     override fun onResourceReady(
                         resource: Drawable?,
                         model: Any?,
@@ -65,7 +69,7 @@ class FullscreenImageViewModelImpl(
                                         R.color.white
                                     )
                                 )
-                                cardView.setCardBackgroundColor(cor)
+                                cardView.setBackgroundColor(cor)
                             }
                         }
                         return false
