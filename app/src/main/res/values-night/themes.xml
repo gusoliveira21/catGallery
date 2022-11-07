@@ -15,7 +15,7 @@
         <item name="toolbarStyle">@style/MyToolbar</item>
         <item name="colorSecondary">?attr/colorPrimaryVariant</item> <!--pin da pesquisa-->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">?attr/colorOnBackground</item>
     </style>
 
 </resources>

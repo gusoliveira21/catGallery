@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/icon_cat_round"
         android:supportsRtl="true"
         android:name=".application.CatApplication"
-        android:theme="@style/Theme.Splash"
+        android:theme="@style/Theme.CatGallery"
         android:fullBackupContent="@xml/backup_descriptor"
         android:dataExtractionRules="@xml/data_extraction_rules"
         tools:targetApi="s">

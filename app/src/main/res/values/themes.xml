@@ -22,7 +22,7 @@
         <item name="colorOnBackground">@color/primaryLightColorLight</item> <!--Define a cor de fundo do Splash-->
         <item name="colorSecondary">?attr/colorPrimaryVariant</item> <!--pin da pesquisa-->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">?attr/colorOnBackground</item>
     </style>
 
 </resources>
