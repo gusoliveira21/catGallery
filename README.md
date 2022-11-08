@@ -1,4 +1,4 @@
-# catGallery v1.2
+# catGallery v1.1
 
 ## :eyes: Visualização:
 <p align="center">
