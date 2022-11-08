@@ -2,7 +2,7 @@
 
 ## :eyes: Visualização:
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/42920754/200445473-fe73a5c3-e1af-4af4-9383-c66563d35c2b.gif' width='20%'>
+  <img src='https://user-images.githubusercontent.com/42920754/200445473-fe73a5c3-e1af-4af4-9383-c66563d35c2b.gif' width='30%'>
 <p/>
 
 
