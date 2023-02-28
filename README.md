@@ -5,6 +5,12 @@
   <img src='https://user-images.githubusercontent.com/42920754/200445473-fe73a5c3-e1af-4af4-9383-c66563d35c2b.gif' width='30%'>
 <p/>
 
+## :wrench: Arquitetura usada:
+<br>
+<p align="center">
+ <img src='https://user-images.githubusercontent.com/42920754/221721696-ff43b0e0-89d8-4ce1-a7f0-b039c76116eb.png' width='30%'>
+<p/>
+
 
 ## :bulb: Ferramentas utilizadas:
 - **Koin**: Para injeção de dependência.
