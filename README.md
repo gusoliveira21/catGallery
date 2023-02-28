@@ -13,6 +13,13 @@
 <p/>
 
 
+## :wrench: Arquitetura usada:
+<br>
+<p align="center">
+ <img src='https://user-images.githubusercontent.com/42920754/221721696-ff43b0e0-89d8-4ce1-a7f0-b039c76116eb.png' width='30%'>
+<p/>
+
+
 ## :bulb: Ferramentas utilizadas:
 - **Koin**: Para injeção de dependência.
 - **Retrofit**: Utilizada para facilitar o consumo de serviços web, recebendo uma lista de dados.
