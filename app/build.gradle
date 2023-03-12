@@ -8,7 +8,7 @@ plugins {
 
 android {
     compileSdk 33
-
+    namespace 'br.com.gusoliveira21.catgallery'
     defaultConfig {
         applicationId "br.com.gusoliveira21.catgallery"
         minSdk 21
