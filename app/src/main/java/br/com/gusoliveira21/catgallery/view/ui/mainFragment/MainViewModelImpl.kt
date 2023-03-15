@@ -26,6 +26,9 @@ class MainViewModelImpl(
                 result.handleResult(::getCatListSuccess, ::getCatListFailure)
             }
         }
+        else{
+            error.value = "Não foi possível obter a lista de gatos!!"
+        }
     }
 
     override fun onImageClicked(link: String) {
