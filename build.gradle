@@ -11,6 +11,9 @@ buildscript {
         classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3'
     }
 }
+ext {
+    kotlinJvmTarget = JavaVersion.VERSION_11
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
